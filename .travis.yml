@@ -1,0 +1,27 @@
+language: node_js
+
+node_js: stable
+
+before_install:
+- npm install -g hexo-cli
+
+install:
+  - npm install
+
+before_script:
+- git config --global user.name 'swim2sun'
+- git config --global user.email '501902960@qq.com'
+- sed -i "s/__GITHUB_TOKEN__/${ACCESS_TOKEN}/" _config.yml
+# use custom theme config
+- git submodule update --init
+
+script:
+  - hexo cl  #清除
+  - hexo d   #发布
+
+after_script:
+  - echo "commit to baidu"
+
+branches:
+  only:
+    - hexo  #只监测hexo分支，hexo是我的分支的名称，可根据自己情况设置
