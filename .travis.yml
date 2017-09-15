@@ -12,6 +12,7 @@ before_script:
 - git config --global user.name 'swim2sun'
 - git config --global user.email '501902960@qq.com'
 - sed -i "s/__GITHUB_TOKEN__/${ACCESS_TOKEN}/" _config.yml
+- sed -i "s/__BAIDU_TOKEN__/${BAIDU_TOKEN}/" _config.yml
 # use custom theme config
 - git submodule update --init
 
