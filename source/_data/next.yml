@@ -14,7 +14,7 @@ override: false
 favicon: /favicon.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "Hexo, NexT"
+keywords: "swim2sun"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -59,9 +59,9 @@ index_with_subtitle: false
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
 menu:
   home: / || home
+  archives: /archives/ || archive
   tags: /tags/ || tags
   categories: /categories/ || th
-  archives: /archives/ || archive
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
