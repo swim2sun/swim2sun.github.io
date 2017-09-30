@@ -317,8 +317,8 @@ baidu_analytics: 61fb9d6c30f2c93e3bb2b435a7bfa193
 
 # Disqus
 disqus:
-  enable: false
-  shortname:
+  enable: true
+  shortname: swim2sun
   count: true
 
 # Hypercomments
