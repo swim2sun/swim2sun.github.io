@@ -38,7 +38,7 @@ Jenkins Pipeline提供了一组可扩展的工具，用于通过`PipelineDSL`为
 
 ##### Springboot Demo
 
-我准备了个SpringBoot的demo项目（[Github](git@github.com:swim2sun/springboot-jenkinsfile-demo.git))，运行`./gradlew bRun`可启动程序。
+我准备了个SpringBoot的demo项目（[Github](https://github.com/swim2sun/springboot-jenkinsfile-demo))，运行`./gradlew bRun`可启动程序。
 访问`http://localhost:8080/user/find`会返回如下结果：
 
 ```json
