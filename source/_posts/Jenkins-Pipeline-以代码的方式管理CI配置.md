@@ -66,19 +66,19 @@ node {
 
 在Jenkins中创建一个类型为Pipeline的项目。
 
-![在Jenkins中创建Pipeline项目](http://7xkd53.com1.z0.glb.clouddn.com/UC20171009_162854.png)
+![在Jenkins中创建Pipeline项目](http://swim2sun.github.io/images/UC20171009_162854.png)
 
 为了让Jenkins可以从Github上拉取代码，需要在项目中配置部署公钥。
 
-![deploy key](http://7xkd53.com1.z0.glb.clouddn.com/UC20171009_183350.png)
+![deploy key](http://swim2sun.github.io/images/UC20171009_183350.png)
 
 在Jenkins中配置项目的git地址。
 
-![set git address](http://7xkd53.com1.z0.glb.clouddn.com/UC20171009_183531.png)
+![set git address](http://swim2sun.github.io/images/UC20171009_183531.png)
 
 保存后点击`立即构建`，可以看到构建成功，控制台成功输出了`Hello World`。
 
-![Hello World](http://7xkd53.com1.z0.glb.clouddn.com/UC20171009_183924.png)
+![Hello World](http://swim2sun.github.io/images/UC20171009_183924.png)
 
 #### 构建Java项目
 
@@ -101,7 +101,7 @@ node {
 
 提交代码后进行构建，构建成功后在Jenkins中可以但看到构建的产物。
 
-![构建产物](http://7xkd53.com1.z0.glb.clouddn.com/UC20171010_003929.png)
+![构建产物](http://swim2sun.github.io/images/UC20171010_003929.png)
 
 #### 发布项目
 
