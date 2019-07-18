@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.lug.ustc.edu.cn/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo,Next,Blog,Github Pages,Travis,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="前言两年前我初次知道Jekyll和Github Pages，于是心血来潮搭建了自己的blog，然后到处找Jekyll的主题，折腾了一阵子终于把blog整成了自己喜欢的样子。但热情稍纵即逝，不久这个博客便被我遗忘，竟然连完整的文章都没写一篇。 此次，偶然间听闻Hexo，而Hexo的Next主题深深吸引了我，于是又是一番折腾，把blog又大刀阔斧地改成了Hexo。这期间也被别人主题中各种酷炫的效果所吸">
+<meta name="keywords" content="Hexo,Next,Blog,Github Pages,Travis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Github Pages + Hexo 搭建个人博客">
+<meta property="og:url" content="https://swim2sun.github.io/2017/09/Github-Pages-Hexo-搭建个人博客/index.html">
+<meta property="og:site_name" content="程序员的自我修养">
+<meta property="og:description" content="前言两年前我初次知道Jekyll和Github Pages，于是心血来潮搭建了自己的blog，然后到处找Jekyll的主题，折腾了一阵子终于把blog整成了自己喜欢的样子。但热情稍纵即逝，不久这个博客便被我遗忘，竟然连完整的文章都没写一篇。 此次，偶然间听闻Hexo，而Hexo的Next主题深深吸引了我，于是又是一番折腾，把blog又大刀阔斧地改成了Hexo。这期间也被别人主题中各种酷炫的效果所吸">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-18T10:36:13.839Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Github Pages + Hexo 搭建个人博客">
+<meta name="twitter:description" content="前言两年前我初次知道Jekyll和Github Pages，于是心血来潮搭建了自己的blog，然后到处找Jekyll的主题，折腾了一阵子终于把blog整成了自己喜欢的样子。但热情稍纵即逝，不久这个博客便被我遗忘，竟然连完整的文章都没写一篇。 此次，偶然间听闻Hexo，而Hexo的Next主题深深吸引了我，于是又是一番折腾，把blog又大刀阔斧地改成了Hexo。这期间也被别人主题中各种酷炫的效果所吸">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://swim2sun.github.io/2017/09/Github-Pages-Hexo-搭建个人博客/">
+
+
+
+
+
+  <title>Github Pages + Hexo 搭建个人博客 | 程序员的自我修养</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-119710073-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?61fb9d6c30f2c93e3bb2b435a7bfa193";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">程序员的自我修养</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">swim2sun</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://swim2sun.github.io/2017/09/Github-Pages-Hexo-搭建个人博客/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="swim2sun">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/moe.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="程序员的自我修养">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Github Pages + Hexo 搭建个人博客</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-23T17:33:00+00:00">
+                2017-09-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/tech/" itemprop="url" rel="index">
+                    <span itemprop="name">tech</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/Github-Pages-Hexo-搭建个人博客/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/09/Github-Pages-Hexo-搭建个人博客/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>两年前我初次知道Jekyll和Github Pages，于是心血来潮搭建了自己的blog，然后到处找Jekyll的主题，折腾了一阵子终于把blog整成了自己喜欢的样子。但热情稍纵即逝，不久这个博客便被我遗忘，竟然连完整的文章都没写一篇。</p>
+<p>此次，偶然间听闻Hexo，而Hexo的Next主题深深吸引了我，于是又是一番折腾，把blog又大刀阔斧地改成了Hexo。这期间也被别人主题中各种酷炫的效果所吸引过，但冷静下来后，还是决定把重心放在写作上，而把各种主题中影响写作和阅读的特性都摒弃掉。在此记录下自己搭建的过程，希望能帮助后来者更轻松的搭建自己的静态博客。不在乎多少人看，只希望借此养成归纳记录的好习惯。</p>
+<a id="more"></a>
+<h3 id="Github-Pages-Hexo-低成本的博客解决方案"><a href="#Github-Pages-Hexo-低成本的博客解决方案" class="headerlink" title="Github Pages + Hexo = 低成本的博客解决方案"></a>Github Pages + Hexo = 低成本的博客解决方案</h3><h4 id="Github-Pages"><a href="#Github-Pages" class="headerlink" title="Github Pages"></a>Github Pages</h4><p>几年前WordPress盛行，然而并没有吸引我，原因很简单–没钱。动态博客意味着你得有台服务器。但<a href="https://pages.github.com/" target="_blank" rel="noopener">Github Pages</a>出现了，它的初衷是为了方便搭建开源项目的网站，但程序员们发现用它来搭建博客简直完美，GitHub强大的服务器和CDN简直是专门为广大穷苦的屌丝程序员而准备的。而且Markdown的格式对于写作非常方便，因此静态博客开始火了。</p>
+<h4 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h4><p>静态博客需要生成器，Github Pages本身支持<a href="http://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>，因此最初Jekyll的受众更多。但Jekyll插件功能比较薄弱，由于Jekyll是ruby写的，比不上现在如日中天的Node.js，如今被Hexo所超越也是情理之中。</p>
+<h3 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h3><h4 id="Hexo的安装与使用"><a href="#Hexo的安装与使用" class="headerlink" title="Hexo的安装与使用"></a>Hexo的安装与使用</h4><p>Hexo的安装与使用有详细的<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">官方教程</a>，因此这里不再赘述。此处只提下我在安装过程中碰到的问题。</p>
+<h5 id="npm-permission-denied"><a href="#npm-permission-denied" class="headerlink" title="npm permission denied"></a>npm permission denied</h5><p>在使用npm全局安装hexo时可能会因权限不足而报错。如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm ERR! Error: EACCES: permission denied, rename &apos;/root/test/node_modules/.staging/lodash-9a2aabe2&apos; -&gt; &apos;/root/test/node_modules/lodash&apos;</span><br><span class="line">npm ERR!     at destStatted (/usr/lib/node_modules/npm/lib/install/action/finalize.js:25:7)</span><br><span class="line">npm ERR!     at FSReqWrap.oncomplete (fs.js:82:15)</span><br></pre></td></tr></table></figure>
+<p>这是因为npm默认的全局安装路径在<code>/usr/local</code>下面，通常暴力的方式是直接<code>sudo</code>运行npm。但这是不提倡的，官方给出了<a href="https://docs.npmjs.com/getting-started/fixing-npm-permissions" target="_blank" rel="noopener">解决方案</a>.简单来说有两种：</p>
+<ol>
+<li>改变npm全局默认安装目录的权限</li>
+<li>改变npm默认安装目录</li>
+</ol>
+<p>我选择了第二种，具体方法如下：</p>
+<ol>
+<li>在用户目录创建目录供npm使用: <code>mkdir ~/.npm-global</code></li>
+<li>修改npm配置：<code>npm config set prefix &#39;~/.npm-global&#39;</code></li>
+<li>将目录添加到环境变量中：<code>export PATH=~/.npm-global/bin:$PATH</code></li>
+</ol>
+<h5 id="package-lock-json"><a href="#package-lock-json" class="headerlink" title="package-lock.json"></a>package-lock.json</h5><p>当终于安装好了hexo，并生成了项目文件后，我激动地输入了<code>npm install</code>。然而，项目根目录下竟然多个了文件<code>package-lock.json</code>。一番搜索后发现这个文件保存了依赖的类库的具体版本信息，感觉对我来说作用并不大，于是按照<a href="https://github.com/npm/npm/issues/17514" target="_blank" rel="noopener">npm-issuse#17514</a>上面的方法，在<code>.npmrc</code>里加上如下配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">package-lock=false</span><br></pre></td></tr></table></figure>
+<p>然后就可以愉快地把<code>package-lock.json</code>删掉了。</p>
+<h4 id="Next主题的安装"><a href="#Next主题的安装" class="headerlink" title="Next主题的安装"></a>Next主题的安装</h4><p>之所以选择Next，是看中了Next主题的简洁，安装方法可以参考<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">官方教程</a>，但有一些问题需要注意。</p>
+<h5 id="主题配置文件的版本管理"><a href="#主题配置文件的版本管理" class="headerlink" title="主题配置文件的版本管理"></a>主题配置文件的版本管理</h5><p>刚开始我们会把主题<code>clone</code>到<code>themes</code>目录下，然后跟随教程修改主题的<code>_config.yml</code>配置文件进行一些个性化的配置。我们必然也需要对blog进行版本管理，然而当我们<code>commit</code>到Github后，问题出现了：<code>themes/next/_config.yml</code>文件并未提交到Github，因为这个文件属于next项目。</p>
+<p>这个问题有两种解决方法：</p>
+<ol>
+<li><code>fork</code>一份next主题，将自己<code>fork</code>的next主题<code>clone</code>到<code>themes</code>目录下，将主题的配置文件更新到fort的next主题。</li>
+<li>next主题支持把配置文件放到<code>source</code>目录下。可以把<code>themes/next/_config.yml</code>文件复制到<code>source/_data</code>目录下，重命名为<code>next.yml</code>。</li>
+</ol>
+<h5 id="“百度站长”配置"><a href="#“百度站长”配置" class="headerlink" title="“百度站长”配置"></a>“百度站长”配置</h5><p>在配置百度站长时，需要将验证文件放到<code>source</code>目录下，此处需要注意在文件的开头加上<code>layout:false</code>的配置，否则页面会被hexo包装渲染，导致无法通过验证。配置如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">layout: false</span><br><span class="line">---</span><br><span class="line">(原页面内容)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          
+            <a href="/tags/Next/" rel="tag"># Next</a>
+          
+            <a href="/tags/Blog/" rel="tag"># Blog</a>
+          
+            <a href="/tags/Github-Pages/" rel="tag"># Github Pages</a>
+          
+            <a href="/tags/Travis/" rel="tag"># Travis</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/Jenkins-Pipeline-以代码的方式管理CI配置/" rel="prev" title="Jenkins Pipeline - 以代码的方式管理CI配置">
+                Jenkins Pipeline - 以代码的方式管理CI配置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image" src="/images/moe.png" alt="swim2sun">
+          
+            <p class="site-author-name" itemprop="name">swim2sun</p>
+            <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/swim2sun" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>GitHub</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Github-Pages-Hexo-低成本的博客解决方案"><span class="nav-number">2.</span> <span class="nav-text">Github Pages + Hexo = 低成本的博客解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Github-Pages"><span class="nav-number">2.1.</span> <span class="nav-text">Github Pages</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hexo"><span class="nav-number">2.2.</span> <span class="nav-text">Hexo</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搭建过程"><span class="nav-number">3.</span> <span class="nav-text">搭建过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Hexo的安装与使用"><span class="nav-number">3.1.</span> <span class="nav-text">Hexo的安装与使用</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#npm-permission-denied"><span class="nav-number">3.1.1.</span> <span class="nav-text">npm permission denied</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#package-lock-json"><span class="nav-number">3.1.2.</span> <span class="nav-text">package-lock.json</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Next主题的安装"><span class="nav-number">3.2.</span> <span class="nav-text">Next主题的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#主题配置文件的版本管理"><span class="nav-number">3.2.1.</span> <span class="nav-text">主题配置文件的版本管理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#“百度站长”配置"><span class="nav-number">3.2.2.</span> <span class="nav-text">“百度站长”配置</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">swim2sun</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://swim2sun.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://swim2sun.github.io/2017/09/Github-Pages-Hexo-搭建个人博客/';
+          this.page.identifier = '2017/09/Github-Pages-Hexo-搭建个人博客/';
+          this.page.title = 'Github Pages + Hexo 搭建个人博客';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://swim2sun.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

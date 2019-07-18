@@ -1,0 +1,3 @@
+https://swim2sun.github.io/2018/03/平凡程序员的生存之道/
+https://swim2sun.github.io/2017/11/Mac安装OpenCV-3x-for-Java/
+https://swim2sun.github.io/2017/10/Jenkins-Pipeline-以代码的方式管理CI配置/
